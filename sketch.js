@@ -13,8 +13,8 @@ function setup() {
   bg = createSprite(800, 200, 1600, 400)
 bg.addImage(bkg)
 
-  speed = random(223,321);
-  weight = random(30, 52);
+  speed = random(55,90);
+  weight = random(400,1500);
   thickness = 20
 
 car = createSprite(50, 200, 50, 50);
@@ -37,14 +37,14 @@ function draw() {
 if (car.collide(wall)) {
 
  if (damage < 100 ){
-   car.shapeColor = "lime"
+  wall.shapeColor = "lime"
    fill("lime");
    textSize(200);
    text("best !!",500, 250);
  }
 
  if (damage > 100){
-   car.shapeColor = "red"
+   wall.shapeColor = "red"
    fill("red");
    textSize(200);
    text("! worst !",500, 250);
@@ -52,12 +52,12 @@ if (car.collide(wall)) {
 } 
 
   drawSprites();
-  if(car.shapeColor === "lime")
+  if(wall.shapeColor === "lime")
   { fill("lime"); 
   textSize(200); 
   text("best !!",500, 250); } 
 
-  if(car.shapeColor === "red")
+  if(wall.shapeColor === "red")
   { fill("red"); 
   textSize(200); 
   text("! worst !",500, 250); } 
